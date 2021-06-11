@@ -1,2 +1,3 @@
 rootProject.name = "msh_02"
 include ':app'
+include ':networkUtils'
