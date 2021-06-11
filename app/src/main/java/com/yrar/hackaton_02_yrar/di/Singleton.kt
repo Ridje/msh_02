@@ -2,11 +2,10 @@ package com.yrar.hackaton_02_yrar.di
 
 import android.content.Context
 import androidx.room.Room
-import com.yrar.hackaton_02_yrar.repository.RepositoryLocal
-import com.yrar.hackaton_02_yrar.repository.RepositoryLocalRoom
-import com.yrar.hackaton_02_yrar.repository.RepositoryNetwork
-import com.yrar.hackaton_02_yrar.repository.RepositoryNetworkRetrofit
+import com.yrar.hackaton_02_yrar.repository.*
+import com.yrar.hackaton_02_yrar.retrofit.API
 import com.yrar.hackaton_02_yrar.room.UserDatabase
+import com.yrar.hackaton_02_yrar.utils.URLs
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +14,9 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
+import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
+import java.net.URL
 import javax.inject.Singleton
 
 const val DB_NAME = "localbase.dt"
@@ -50,6 +51,18 @@ class Singleton {
 
     @Singleton
     @Provides
+    fun provideAPIService(converterFactory: Converter.Factory, okHttpClient: OkHttpClient): API {
+        return Retrofit
+            .Builder()
+            .addConverterFactory(converterFactory)
+            .client(okHttpClient)
+            .baseUrl(URLs.API_URL)
+            .build()
+            .create(API::class.java)
+    }
+
+    @Singleton
+    @Provides
     fun provideRepositoryLocal(
         roomService: UserDatabase
     ): RepositoryLocal {
@@ -59,7 +72,8 @@ class Singleton {
     @Singleton
     @Provides
     fun provideRepositoryNetwork(
+        service: API
     ) : RepositoryNetwork {
-        return RepositoryNetworkRetrofit()
+        return RepositoryNetworkMock(service)
     }
 }
