@@ -5,15 +5,19 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 
 @Entity(
-    foreignKeys = [ForeignKey
-        (
-        entity = EventEntity::class,
-        parentColumns = ["id"],
-        childColumns = ["event_id"]
-    ), ]
+    foreignKeys = [
+        ForeignKey
+            (
+            entity = EventEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["event_id"]
+        ),
+    ],
+    primaryKeys = ["event_id", "user_id"]
 )
 data class UserEventEntity(
     @ColumnInfo(name = "event_id")
-    var event_id: String,
-    var user_id: Int
+    var eventId: String,
+    @ColumnInfo(name = "user_id")
+    var userId: Int
 )

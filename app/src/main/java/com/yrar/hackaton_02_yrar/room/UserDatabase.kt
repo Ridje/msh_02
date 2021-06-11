@@ -10,7 +10,7 @@ import com.yrar.hackaton_02_yrar.room.dao.UserEventDAO
 @Database(
     entities = [EventEntity::class, UserEventEntity::class],
     version = 1,
-    exportSchema = true)
+    exportSchema = false)
 abstract class UserDatabase: RoomDatabase() {
 
     abstract fun eventDAO(): EventDAO
