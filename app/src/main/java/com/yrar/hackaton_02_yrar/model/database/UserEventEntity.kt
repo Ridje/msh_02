@@ -14,6 +14,6 @@ import androidx.room.ForeignKey
 )
 data class UserEventEntity(
     @ColumnInfo(name = "event_id")
-    var event_id: Int,
+    var event_id: String,
     var user_id: Int
 )
