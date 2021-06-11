@@ -5,6 +5,7 @@ import com.yrar.hackaton_02_yrar.retrofit.API
 
 class RepositoryNetworkMock(val service: API): RepositoryNetwork {
     override fun getActualEvents(): List<EventResponse> {
+        Thread.sleep(5000L)
         return listOf(
             EventResponse(
                 "0d6b89e595e94656bca6f7909d0460ed",
