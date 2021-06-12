@@ -76,4 +76,5 @@ class Singleton {
     ) : RepositoryNetwork {
         return RepositoryNetworkMock(service)
     }
+
 }
