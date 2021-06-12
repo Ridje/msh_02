@@ -2,4 +2,17 @@
     <string name="app_name">Superapp MSH</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_event_full_description">Коммуникация, как следует из вышесказанного, одновременно тормозит креативный рекламный макет. Таргетирование, конечно, недостижимо. Наряду с этим, искусство медиапланирования упорядочивает комплексный анализ ситуации, размещаясь во всех медиа. Молодежная аудитория, согласно Ф.Котлеру, искажает тактический BTL. До недавнего времени считалось, что разработка медиаплана уравновешивает из ряда вон выходящий фактор коммуникации. Более того, агентская комиссия синхронизирует эксклюзивный имидж.</string>
+    <string name="example_event_address">г. Москва</string>
+    <string name="example_event_date">11.06.21 – 14.06.21</string>
+    <string name="example_event_title">Название мероприятия</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

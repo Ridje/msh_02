@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/fragment_vertical_margin"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    tools:context=".ui.authorization.StartAuthFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mik_logo" />
+
+    <ImageView
+        android:id="@+id/lazy_boy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/done" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="От идеи до реализации"
+        android:layout_marginTop="17dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="@+id/lazy_boy"
+        app:layout_constraintStart_toStartOf="@+id/lazy_boy"
+        app:layout_constraintTop_toBottomOf="@+id/lazy_boy" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="Создавать проекты с МИК теперь на много удобнее,
+изменим мир вместе?"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_button"
+        android:text="Зарегистрироваться"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="УЖЕ ЕСТЬ АККАУНТ? ВОЙТИ"
+        android:layout_marginTop="20dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintEnd_toEndOf="@+id/registration"
+        app:layout_constraintStart_toStartOf="@+id/registration"
+        app:layout_constraintTop_toBottomOf="@+id/registration" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

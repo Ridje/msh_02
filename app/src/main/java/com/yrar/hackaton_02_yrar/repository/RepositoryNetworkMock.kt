@@ -45,6 +45,86 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "London, UK",
                 "admin@mail.ru",
                 "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
+            ),
+            EventResponse(
+                "0d6b89e595e94656bca6f7909d0460ed",
+                "Skolkovo Jazz Science",
+                "Место, где наука и музыка соединяются, превращаясь в магию",
+                "выставка",
+                1630108800000,
+                null,
+                "Нам очень жаль прощаться с вами. " +
+                    "Простите нам несколько минут ностальгии и присоединяйтесь: мы собрали фотографии за всю историю фестиваля, пересматриваем их и уже скучаем по вам. " +
+                    "Когда-нибудь мы увидимся снова!",
+                "г. Москва, Центральная зона, д. Центральная зона, Центральный парк",
+                "admin@mail.ru",
+                "https://skjazz.ru/"
+            ),
+            EventResponse(
+                "f014b0c3cd604b5bb5c0d9611011054d",
+                "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
+                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
+                "выставка",
+                1629936000000,
+                1630022400000,
+                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
+                    "\n" +
+                    "Benefits:  1. Keynote certificate / speaker Certificate\n" +
+                    "\n" +
+                    "2. CPD certificate / CME certificate\n" +
+                    "\n" +
+                    "3. Best speaker / best young researcher award\n" +
+                    "\n" +
+                    "4. Journal Publication with ISSN number\n" +
+                    "\n" +
+                    "5. Separate Biography and research page in website.\n" +
+                    "\n" +
+                    "6. Conference Kit\n" +
+                    "\n" +
+                    "7. Lunch and breakfast.",
+                "London, UK",
+                "admin@mail.ru",
+                "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
+            ),
+            EventResponse(
+                "0d6b89e595e94656bca6f7909d0460ed",
+                "Skolkovo Jazz Science",
+                "Место, где наука и музыка соединяются, превращаясь в магию",
+                "выставка",
+                1630108800000,
+                null,
+                "Нам очень жаль прощаться с вами. " +
+                    "Простите нам несколько минут ностальгии и присоединяйтесь: мы собрали фотографии за всю историю фестиваля, пересматриваем их и уже скучаем по вам. " +
+                    "Когда-нибудь мы увидимся снова!",
+                "г. Москва, Центральная зона, д. Центральная зона, Центральный парк",
+                "admin@mail.ru",
+                "https://skjazz.ru/"
+            ),
+            EventResponse(
+                "f014b0c3cd604b5bb5c0d9611011054d",
+                "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
+                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
+                "выставка",
+                1629936000000,
+                1630022400000,
+                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
+                    "\n" +
+                    "Benefits:  1. Keynote certificate / speaker Certificate\n" +
+                    "\n" +
+                    "2. CPD certificate / CME certificate\n" +
+                    "\n" +
+                    "3. Best speaker / best young researcher award\n" +
+                    "\n" +
+                    "4. Journal Publication with ISSN number\n" +
+                    "\n" +
+                    "5. Separate Biography and research page in website.\n" +
+                    "\n" +
+                    "6. Conference Kit\n" +
+                    "\n" +
+                    "7. Lunch and breakfast.",
+                "London, UK",
+                "admin@mail.ru",
+                "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
             )
         )
     }
