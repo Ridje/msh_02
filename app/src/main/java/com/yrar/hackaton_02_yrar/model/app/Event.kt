@@ -1,7 +1,10 @@
 package com.yrar.hackaton_02_yrar.model.app
 
+import android.os.Parcelable
 import com.yrar.hackaton_02_yrar.model.network.EventResponse
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Event(
     var id: String,
     var title: String,
@@ -13,7 +16,7 @@ data class Event(
     var address: String,
     var contactEmail: String,
     var webAddress: String
-) {
+): Parcelable {
     constructor(eventResponse: EventResponse) : this(
         eventResponse.id,
         eventResponse.title,

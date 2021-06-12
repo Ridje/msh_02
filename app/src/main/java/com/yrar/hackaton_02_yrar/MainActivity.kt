@@ -3,9 +3,8 @@ package com.yrar.hackaton_02_yrar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import com.yrar.hackaton_02_yrar.databinding.MainActivityBinding
-import com.yrar.hackaton_02_yrar.ui.EventsFragment
+import com.yrar.hackaton_02_yrar.ui.events.EventsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    fun navigateToFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit()
     }
 
     fun navigateToDefaultFragment() {

@@ -1,18 +1,16 @@
-package com.yrar.hackaton_02_yrar.ui
+package com.yrar.hackaton_02_yrar.ui.events
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yrar.hackaton_02_yrar.model.app.Event
-import com.yrar.hackaton_02_yrar.model.network.EventResponse
 import com.yrar.hackaton_02_yrar.repository.RepositoryLocal
 import com.yrar.hackaton_02_yrar.repository.RepositoryNetwork
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
-import java.util.stream.Collectors
 import javax.inject.Inject
 
 @HiltViewModel

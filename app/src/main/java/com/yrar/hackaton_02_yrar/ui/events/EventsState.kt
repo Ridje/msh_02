@@ -1,4 +1,4 @@
-package com.yrar.hackaton_02_yrar.ui
+package com.yrar.hackaton_02_yrar.ui.events
 
 import com.yrar.hackaton_02_yrar.model.app.Event
 

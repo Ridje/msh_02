@@ -5,14 +5,13 @@ import com.yrar.hackaton_02_yrar.retrofit.API
 
 class RepositoryNetworkMock(val service: API): RepositoryNetwork {
     override fun getActualEvents(): List<EventResponse> {
-        Thread.sleep(5000L)
         return listOf(
             EventResponse(
                 "0d6b89e595e94656bca6f7909d0460ed",
                 "Skolkovo Jazz Science",
                 "Место, где наука и музыка соединяются, превращаясь в магию",
                 "выставка",
-                1630108800,
+                1630108800000,
                 null,
                 "Нам очень жаль прощаться с вами. " +
                     "Простите нам несколько минут ностальгии и присоединяйтесь: мы собрали фотографии за всю историю фестиваля, пересматриваем их и уже скучаем по вам. " +
@@ -26,8 +25,8 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
                 "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
                 "выставка",
-                1629936000,
-                1630022400,
+                1629936000000,
+                1630022400000,
                 "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
                     "\n" +
                     "Benefits:  1. Keynote certificate / speaker Certificate\n" +
@@ -57,8 +56,8 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "\"Организационное поведение и лидерство\" от бизнес-школы МИРБИС",
                 "Курс будет полезен руководителям среднего и высшего звена, поскольку позволит осознать особенности работы и поможет каждому участн ...",
                 "лекция",
-                1621900800,
-                1621987200,
+                1621900800000,
+                1621987200000,
                 "Раздел 1. Введение в организационное поведение.\n" +
                     "\n" +
                     "Понятие организационного поведения. Факторы, влияющие на организационное поведение. \n" +
@@ -103,7 +102,7 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "SVIIF works to publicize state-of-the-art inventions around the world and provides " +
                     "a unique opportunity for inventors to not only commercialize their inventions but also the American market in the heart of the Silicon Valley ....",
                 "Выставка",
-                1622505600,
+                1622505600000,
                 null,
                 "SVIIF works to publicize state-of-the-art inventions around the world and provides a unique opportunity " +
                     "for inventors to not only commercialize their inventions but also the American market in the heart of the Silicon Valley.\n" +
