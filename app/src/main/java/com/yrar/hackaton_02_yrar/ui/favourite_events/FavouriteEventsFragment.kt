@@ -43,6 +43,7 @@ class FavouriteEventsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (requireActivity() as MainActivity).setBottomNavigationMenuVisibility(true)
         viewModel.getLiveData().observe(viewLifecycleOwner, { render(it) })
         viewModel.getActualFavouriteEvents()
     }

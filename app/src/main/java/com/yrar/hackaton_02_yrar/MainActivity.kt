@@ -1,14 +1,15 @@
 package com.yrar.hackaton_02_yrar
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.yrar.hackaton_02_yrar.databinding.MainActivityBinding
 import com.yrar.hackaton_02_yrar.ui.events.EventsFragment
 import com.yrar.hackaton_02_yrar.ui.favourite_events.FavouriteEventsFragment
-import com.yrar.hackaton_02_yrar.ui.user_profile.UserProfileFragment
 import com.yrar.hackaton_02_yrar.ui.start.StartFragment
+import com.yrar.hackaton_02_yrar.ui.user_profile.UserProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -53,7 +54,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        setBottomNavigationMenuVisibility(true)
+    }
+
+    fun popBackstack() {
+        supportFragmentManager.popBackStack()
     }
 
     fun setBottomNavigationMenuVisibility(visibility: Boolean) {
@@ -63,13 +67,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun cleanFragmentManager() {
+//        while (supportFragmentManager.backStackEntryCount != 0) {
+//            supportFragmentManager.popBackStackImmediate()
+//       }
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            val entry: FragmentManager.BackStackEntry = supportFragmentManager.getBackStackEntryAt(0)
+            supportFragmentManager.popBackStack(entry.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
+    }
+
     fun navigateToFragment(fragment: Fragment, addToBackStack: Boolean = false) {
         val transaction = supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
         if (addToBackStack) {
             transaction.addToBackStack(null)
         }
         transaction.commit()
-        binding.bottomNavigationMenu.visibility = View.VISIBLE
     }
 
     fun navigateToDefaultFragment() {

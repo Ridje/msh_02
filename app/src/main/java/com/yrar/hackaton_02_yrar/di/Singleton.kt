@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.yrar.hackaton_02_yrar.repository.*
 import com.yrar.hackaton_02_yrar.retrofit.API
 import com.yrar.hackaton_02_yrar.room.UserDatabase
+import com.yrar.hackaton_02_yrar.utils.AppPreferences
 import com.yrar.hackaton_02_yrar.utils.URLs
 import dagger.Module
 import dagger.Provides
@@ -77,4 +78,9 @@ class Singleton {
         return RepositoryNetworkMock(service)
     }
 
+    @Singleton
+    @Provides
+    fun providePreferences(@ApplicationContext context: Context): AppPreferences {
+        return AppPreferences(context)
+    }
 }
