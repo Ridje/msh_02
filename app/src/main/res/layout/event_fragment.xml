@@ -15,26 +15,39 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="300dp"
+            android:maxWidth="280dp"
             android:text="@string/example_event_title"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
-            android:theme="@style/likeCheckbox"
             android:id="@+id/likeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_favorite_empty"
             android:button="@drawable/like_selector"
             android:checked="false"
             android:gravity="center"
-            android:background="@drawable/ic_favorite_empty"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:stateListAnimator="@animator/scale"
+            android:theme="@style/likeCheckbox"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:stateListAnimator="@animator/scale" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/buttonShare"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="25dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/likeIcon"
+            app:layout_constraintEnd_toStartOf="@+id/likeIcon"
+            app:layout_constraintTop_toTopOf="@+id/likeIcon"
+            android:src="@drawable/ic_send_fill" />
 
         <TextView
             android:id="@+id/fullDescription"
@@ -95,9 +108,18 @@
             android:layout_height="330dp"
             android:layout_marginTop="28dp"
             android:background="@drawable/cover_background"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_icon" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAddToCalendar"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cover"
+            android:text="Добавить в календарь"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
