@@ -13,12 +13,20 @@ class RepositoryLocalRoom(val service: UserDatabase): RepositoryLocal {
         return service.eventDAO().getAllActual(System.currentTimeMillis())
     }
 
+    override fun getMyAllEvents(currentUser: Int): List<UserEventEntity> {
+        return service.userEventDAO().all(currentUser)
+    }
+
     override fun saveEventsToCache(events: List<EventEntity>) {
         service.eventDAO().saveEventsToCache(events)
     }
 
     override fun saveToMyEvents(userEventEntity: UserEventEntity) {
         service.userEventDAO().insert(userEventEntity)
+    }
+
+    override fun removeFromMyEvents(userEventEntity: UserEventEntity) {
+        service.userEventDAO().delete(userEventEntity)
     }
 
     override fun getMyActualEvents(currentUser: Int): List<EventEntity> {

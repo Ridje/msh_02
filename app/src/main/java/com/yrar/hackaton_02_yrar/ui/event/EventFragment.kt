@@ -2,27 +2,27 @@ package com.yrar.hackaton_02_yrar.ui.event
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.yrar.hackaton_02_yrar.MainActivity
 import com.yrar.hackaton_02_yrar.databinding.EventFragmentBinding
 import com.yrar.hackaton_02_yrar.model.app.Event
-import java.text.SimpleDateFormat
-import java.util.*
-
+import dagger.hilt.android.AndroidEntryPoint
 
 private const val EVENT_ARGUMENT_KEY = "EVENT_OPENED"
 
+@AndroidEntryPoint
 class EventFragment : Fragment() {
+
     private var _binding: EventFragmentBinding? = null
     private val binding get() = _binding!!
 
-    val dateFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+    private val viewModel: EventViewModel by viewModels()
 
     private var event: Event? = null
 
@@ -48,25 +48,35 @@ class EventFragment : Fragment() {
         } else {
             (requireActivity() as MainActivity).navigateToDefaultFragment()
         }
-        binding.contactEmail.setOnClickListener { onContactEmailClick(view) }
-        binding.webAddress.setOnClickListener{ onWebClick(view) }
+        binding.likeIcon.setOnClickListener { onLikeClick(view) }
+
+        (requireActivity() as MainActivity).setBottomNavigationMenuVisibility(false)
+//        binding.contactEmail.setOnClickListener { onContactEmailClick(view) }
+//        binding.webAddress.setOnClickListener{ onWebClick(view) }
+    }
+
+    fun onLikeClick(view: View) {
+        event?.let {
+            it.isFavourite = !it.isFavourite
+            viewModel.updateFavourite(it)
+        }
     }
 
     fun onWebClick(view: View) {
         startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse(binding.webAddress.text.toString())
+//                Uri.parse(binding.webAddress.text.toString())
             )
         )
     }
 
     private fun onContactEmailClick(view: View) {
-        val emails = arrayOf(binding.contactEmail.text.toString())
-        val intent = Intent(Intent.ACTION_SENDTO);
-        intent.putExtra(Intent.EXTRA_EMAIL, emails);
-        intent.data = Uri.parse("mailto:" + binding.contactEmail.text.toString())
-        startActivity(intent)
+//        val emails = arrayOf(binding.contactEmail.text.toString())
+//        val intent = Intent(Intent.ACTION_SENDTO);
+//        intent.putExtra(Intent.EXTRA_EMAIL, emails);
+//        intent.data = Uri.parse("mailto:" + binding.contactEmail.text.toString())
+//        startActivity(intent)
     }
 
     @SuppressLint("SetTextI18n")
@@ -74,8 +84,6 @@ class EventFragment : Fragment() {
         val format = DateFormat.getDateFormat(context)
         event?.apply {
             binding.title.text = title
-            binding.description.text = description
-            binding.type.text = type
             binding.date.text = format.format(dateStart) + if (dateEnd != null) {
                 " - " + format.format(dateEnd)
             } else {
@@ -83,8 +91,7 @@ class EventFragment : Fragment() {
             }
             binding.fullDescription.text = fullDescription
             binding.address.text = address
-            binding.contactEmail.text = contactEmail
-            binding.webAddress.text = webAddress
+            binding.likeIcon.isChecked = isFavourite
         }
     }
 

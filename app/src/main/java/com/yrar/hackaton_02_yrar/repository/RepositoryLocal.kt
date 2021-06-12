@@ -11,6 +11,8 @@ interface RepositoryLocal {
    fun saveEventsToCache(events: List<EventEntity>)
 
    fun saveToMyEvents(userEventEntity: UserEventEntity)
+   fun removeFromMyEvents(userEventEntity: UserEventEntity)
    fun getMyActualEvents(currentUser: Int): List<EventEntity>
    fun getMyArchivedEvents(currentUser: Int): List<EventEntity>
+   fun getMyAllEvents(currentUser: Int): List<UserEventEntity>
 }

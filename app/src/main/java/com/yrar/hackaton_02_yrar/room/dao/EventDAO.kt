@@ -9,7 +9,7 @@ import com.yrar.hackaton_02_yrar.model.database.EventEntity
 @Dao
 interface EventDAO {
 
-    @Query("SELECT * FROM EventEntity WHERE date_end > :currentTime")
+    @Query("SELECT * FROM EventEntity WHERE IFNULL(date_end, date_start) > :currentTime")
     fun getAllActual(currentTime: Long): List<EventEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -11,31 +11,25 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="События"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:text="Мои мероприятия"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_filter_alt_fill"
-        app:layout_constraintBottom_toBottomOf="@+id/title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/events_list"
         android:name="com.yrar.hackaton_02_yrar.ui.EventsFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layoutManager="LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/events_fragment_item"
-        android:layout_marginBottom="2dp"/>
+        tools:listitem="@layout/favourite_events_fragment_item"
+        android:layout_marginBottom="2dp"
+        app:spanCount="2"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -50,4 +44,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

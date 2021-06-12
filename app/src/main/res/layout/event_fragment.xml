@@ -1,58 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.event.EventFragment">
-
-    <TextView
-        android:id="@+id/title"
+    android:scrollbars="none">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:layout_height="wrap_content"
+        tools:context=".ui.event.EventFragment">
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:text="@string/example_event_title"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:theme="@style/likeCheckbox"
+            android:id="@+id/likeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:button="@drawable/like_selector"
+            android:checked="false"
+            android:gravity="center"
+            android:background="@drawable/ic_favorite_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:stateListAnimator="@animator/scale" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <TextView
+            android:id="@+id/fullDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="@string/example_event_full_description"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    <TextView
-        android:id="@+id/fullDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <ImageView
+            android:id="@+id/date_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_date_range_fill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullDescription" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <ImageView
+            android:id="@+id/address_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="63dp"
+            android:src="@drawable/ic_pin_alt_fill"
+            app:layout_constraintBottom_toBottomOf="@+id/date_icon"
+            app:layout_constraintStart_toEndOf="@+id/date"
+            app:layout_constraintTop_toTopOf="@+id/date_icon" />
 
-    <TextView
-        android:id="@+id/contactEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/example_event_date"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toBottomOf="@+id/date_icon"
+            app:layout_constraintStart_toEndOf="@+id/date_icon"
+            app:layout_constraintTop_toTopOf="@+id/date_icon" />
 
-    <TextView
-        android:id="@+id/webAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </TextView>
 
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:maxWidth="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/example_event_address"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toBottomOf="@+id/address_icon"
+            app:layout_constraintStart_toEndOf="@+id/address_icon"
+            app:layout_constraintTop_toTopOf="@+id/address_icon" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/cover_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
