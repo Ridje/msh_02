@@ -17,3 +17,5 @@
 * заполнение ролей пользователя, можно кликнуть по значку фильтра в дефолтном окне и откроется диалог заполнения данных
 
 [Фигма](https://www.figma.com/file/PGwWZZxiiesuR3tW5Jqa4s/Moscow-City-Hack?node-id=0%3A1)
+
+Если будут вопросы по коду - то можно обратиться к [https://t.me/myprivateboard](@myprivateboard)
