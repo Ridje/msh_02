@@ -18,4 +18,4 @@
 
 [Фигма](https://www.figma.com/file/PGwWZZxiiesuR3tW5Jqa4s/Moscow-City-Hack?node-id=0%3A1)
 
-Если будут вопросы по коду - то можно обратиться к [@myprivateboard](https://t.me/myprivateboard)
+Если будут вопросы по коду - то можно обратиться к [Илье](https://t.me/myprivateboard)
