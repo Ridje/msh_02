@@ -27,18 +27,20 @@
         app:layout_constraintTop_toTopOf="@+id/button_back" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginBottom="150dp"
         android:background="@drawable/rounded_edit_text"
-        android:hint="e-mail"
+        android:hint="Логин"
         android:inputType="textEmailAddress"
         android:paddingHorizontal="20dp"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_back" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/password"
@@ -52,7 +54,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -64,7 +66,7 @@
         android:text="Войти"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
