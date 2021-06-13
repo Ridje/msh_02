@@ -1,7 +1,14 @@
 package com.yrar.hackaton_02_yrar.di
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import androidx.core.content.contentValuesOf
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.yrar.hackaton_02_yrar.R
+import com.yrar.hackaton_02_yrar.model.database.InterestEntity
+import com.yrar.hackaton_02_yrar.model.database.RoleEntity
 import com.yrar.hackaton_02_yrar.repository.*
 import com.yrar.hackaton_02_yrar.retrofit.API
 import com.yrar.hackaton_02_yrar.room.UserDatabase
@@ -12,6 +19,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
@@ -41,14 +49,17 @@ class Singleton {
     @Singleton
     @Provides
     fun provideUserDatabase(@ApplicationContext context: Context) : UserDatabase {
+
+
         return Room.databaseBuilder(
             context,
             UserDatabase::class.java,
             DB_NAME)
+            .createFromAsset("assetbase.dt")
             //дропает базу даннух перед каждой миграцией, используется только в девелопе
-            .fallbackToDestructiveMigration()
             .build()
     }
+
 
     @Singleton
     @Provides

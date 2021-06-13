@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="roles_images">
+        <item>@drawable/pic_role_invester</item>
+        <item>@drawable/pic_role_invester_search</item>
+        <item>@drawable/pic_role_finance</item>
+        <item>@drawable/pic_role_government</item>
+        <item>@drawable/pic_role_randd</item>
+        <item>@drawable/pic_role_ideas_generator</item>
+        <item>@drawable/pic_role_executor</item>
+    </integer-array>
+</resources>

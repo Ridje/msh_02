@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import com.yrar.hackaton_02_yrar.model.app.Event
-import com.yrar.hackaton_02_yrar.model.network.EventResponse
 
 @Entity(
     foreignKeys = [

@@ -3,7 +3,7 @@ package com.yrar.hackaton_02_yrar.repository
 import com.yrar.hackaton_02_yrar.model.network.EventResponse
 import com.yrar.hackaton_02_yrar.retrofit.API
 
-class RepositoryNetworkMock(val service: API): RepositoryNetwork {
+class RepositoryNetworkMock(val service: API) : RepositoryNetwork {
     override fun getActualEvents(): List<EventResponse> {
         return listOf(
             EventResponse(
@@ -24,7 +24,7 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "f014b0c3cd604b5bb5c0d9611011054d",
                 "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
                 "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
-                "выставка",
+                "мероприятие",
                 1629936000000,
                 1630022400000,
                 "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
@@ -45,86 +45,129 @@ class RepositoryNetworkMock(val service: API): RepositoryNetwork {
                 "London, UK",
                 "admin@mail.ru",
                 "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
+            ),
+            EventResponse(
+                "363c1f269843406abaedac29dfebaf82",
+                "Игропрактика IP-Менеджмента «Чьи в лесу шишки?»",
+                "Интеллектуальная собственность: модно, нужно, выгодно… и опасно — погоня за инвестициями, упущенной выгодой...",
+                "стратегическая сессия",
+                1629936000000,
+                null,
+                "Интеллектуальная собственность: модно, нужно, выгодно… и опасно — погоня за инвестициями, упущенной выгодой, конкурентными преимуществами и «наивное» введение в заблуждение трансформируются в репутационные потери, убытки, правонарушения… обсудим ключевые вопросы конфликтов интересов признания и закрепления интеллектуальных прав на инновации в порядке трудовых отношений:\n" +
+                    "\n" +
+                    "— чем подтвердить наличие и принадлежность интеллектуальных прав?\n" +
+                    "— как опровергнуть наличие и принадлежность интеллектуальных прав?\n" +
+                    "— чьи дивиденды, добавленная стоимость и выгоды интеллектуальных прав?\n" +
+                    "— чьи проблемы имитации интеллектуальных прав и правонарушений?\n" +
+                    "\n" +
+                    "Целевая аудитория: предприниматели, инновационные стартапы и высокотехнологичные предприятия; студенты, аспиранты, профессорско-преподавательский состав высшей школы; аудиторы, консультанты, маркетологи, медиаторы, оценщики, патентоведы, страховые и судебные эксперты, экономисты, юристы.\n" +
+                    "\n" +
+                    "Две команды: работники (создатели РИД) и администрация работодателя (инвестор) или модератор.\n" +
+                    "\n" +
+                    "Цель: снизить риски конфликта интересов по имущественным интеллектуальным правам и повысить эффективность инноваций, стабильность предпринимательской деятельности, трудовых коллективов.\n" +
+                    "\n" +
+                    "Задачи:\n" +
+                    "\n" +
+                    "— познакомиться с возможным конфликтом интересов и репутационными потерями;\n" +
+                    "— сформулировать возможные риски конфликта интересов и правонарушений;\n" +
+                    "— найти приемлемые решения профилактики конфликта интересов и упущенной выгоды;\n" +
+                    "— экспертиза решений и медиация конфликта интересов без репутационных потерь;\n" +
+                    "— повышение профессиональной компетентности авторов, правопреемников; правообладателей.\n" +
+                    "\n" +
+                    "Конфликт интересов — имущественные права на: базу данных; диссертацию; методику; монографию; мультимедийную презентацию; ноу-хау (секреты производства); отчет НИОКР или РНТД; пользовательский интерфейс; программу для ЭВМ; проект (дипломный, инновационный); промышленный дизайн; регламент; рецептуру; спецификацию; стандарт; сценарий; техническое задание; техническое решение; технологию; учебное или методическое пособие; учебную программу.\n" +
+                    "\n" +
+                    "P.S. Комментарий игропрактики приложен. Также целесообразно познакомиться с комментарием игропрактики «Авторское свидетельство» (https://leader-id.ru/events/206928); подписаться на методическое обеспечение «Департамента коммуникаций IPM» (https://clubipm.wordpress.com).",
+                "Россия, Москва, Москва, Малый Конюшковский Пер., д. 2 (3 этаж)",
+                "finas@live.ru",
+                "https://leader-id.ru/events/210215"
             ),
             EventResponse(
                 "0d6b89e595e94656bca6f7909d0460ed",
-                "Skolkovo Jazz Science",
-                "Место, где наука и музыка соединяются, превращаясь в магию",
-                "выставка",
-                1630108800000,
-                null,
-                "Нам очень жаль прощаться с вами. " +
-                    "Простите нам несколько минут ностальгии и присоединяйтесь: мы собрали фотографии за всю историю фестиваля, пересматриваем их и уже скучаем по вам. " +
-                    "Когда-нибудь мы увидимся снова!",
-                "г. Москва, Центральная зона, д. Центральная зона, Центральный парк",
-                "admin@mail.ru",
-                "https://skjazz.ru/"
-            ),
-            EventResponse(
-                "f014b0c3cd604b5bb5c0d9611011054d",
-                "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
-                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
-                "выставка",
+                "Международный конфекс «Ингредиенты и добавки»",
+                "В 2021 году конфекс «Ингредиенты и добавки» пройдет впервые. Площадкой проведения станет Технопарк «Сколково»...",
+                "мероприятие",
+                1629763200000,
                 1629936000000,
-                1630022400000,
-                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
+                "О конфексе «Ингредиенты и добавки»:\n" +
                     "\n" +
-                    "Benefits:  1. Keynote certificate / speaker Certificate\n" +
+                    "Конфекс (конференция + экспозиция) - особый формат деловых мероприятий, совмещающий ключевые особенности выставки и конференции - широкий выбор необходимой для решения бизнес-задач продукции, а также обилие профессиональной информации, без которой невозможно успешно развивать свой бизнес.\n" +
                     "\n" +
-                    "2. CPD certificate / CME certificate\n" +
+                    "В 2021 году конфекс «Ингредиенты и добавки» пройдет впервые. Площадкой проведения станет Технопарк «Сколково» – современный комплекс, ключевой центр развития инновационных технологий в России.\n" +
                     "\n" +
-                    "3. Best speaker / best young researcher award\n" +
+                    "Тематика мероприятия: ингредиенты и добавки, используемые при производстве:\n" +
                     "\n" +
-                    "4. Journal Publication with ISSN number\n" +
-                    "\n" +
-                    "5. Separate Biography and research page in website.\n" +
-                    "\n" +
-                    "6. Conference Kit\n" +
-                    "\n" +
-                    "7. Lunch and breakfast.",
-                "London, UK",
+                    "продуктов питания\n" +
+                    "фармацевтической продукции\n" +
+                    "косметики\n" +
+                    "парфюмерии\n" +
+                    "бытовой химии",
+                "Большой бульвар, д. 42, корпус 1, Технопарк \"Сколково\"",
                 "admin@mail.ru",
-                "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
+                "https://new.ingred.ru/ru-RU/"
             ),
             EventResponse(
-                "0d6b89e595e94656bca6f7909d0460ed",
-                "Skolkovo Jazz Science",
-                "Место, где наука и музыка соединяются, превращаясь в магию",
+                "e775dc0e047548fcb39ac19b1a010179",
+                "Навстречу импакт-инвестициям. Модуль 5",
+                "Навстречу импакт-инвестициям - первая в России программа, которая готовит социальных предпринимателей...",
                 "выставка",
-                1630108800000,
+                1629331200000,
+                1629504000000,
+                "Навстречу импакт-инвестициям - первая в России программа, которая готовит социальных предпринимателей к привлечению импакт-инвестиций.\n" +
+                    "\n" +
+                    "Сайт программы - http://investimpact.ru\n" +
+                    "\n" +
+                    "Программа длится шесть месяцев с мая по ноябрь и включает в себя:\n" +
+                    "\n" +
+                    "● Программу обучения\n" +
+                    "\n" +
+                    "● Менторское сопровождение\n" +
+                    "\n" +
+                    "● Подготовку к привлечению импакт-инвестиций (разработку бизнес-плана и презентации)\n" +
+                    "\n" +
+                    "● Нетворкинг с импакт-инвесторами\n" +
+                    "\n" +
+                    "Результат участия в программе - готовый бизнес-план и презентация для инвестора. В случае успешной презентации, участник выходит на стадию переговоров с инвестором, которая может завершиться сделкой.\n" +
+                    "\n" +
+                    "Программа обучения состоится из шесте модулей, четыре из которых очные.",
+                "Россия, Москва, Москва, Малый Конюшковский Пер., д. 2 (3 этаж)",
+                "admin@mail.ru",
+                "https://leader-id.ru/events/208159"
+            ),
+            EventResponse(
+                "585d603f76af44d6ac950b9e2233e51d",
+                "VR-лекции: «Как виртуальная реальность изменила мир»",
+                "Интерактивные лекции для знакомства с технологиями виртуальной и дополненной реальности (VR/AR). Лекции...",
+                "мероприятие",
+                1628812800000,
                 null,
-                "Нам очень жаль прощаться с вами. " +
-                    "Простите нам несколько минут ностальгии и присоединяйтесь: мы собрали фотографии за всю историю фестиваля, пересматриваем их и уже скучаем по вам. " +
-                    "Когда-нибудь мы увидимся снова!",
-                "г. Москва, Центральная зона, д. Центральная зона, Центральный парк",
+                "Интерактивные лекции для знакомства с технологиями виртуальной и дополненной реальности (VR/AR). Лекции сопровождаются демонстрацией разнообразного авторского контента в формате 360, а также показами документального видео в обычных форматах.",
+                "ЦИФРОВОЕ ДЕЛОВОЕ ПРОСТРАНСТВО МОСКВА, ПОКРОВКА, 47",
                 "admin@mail.ru",
-                "https://skjazz.ru/"
+                "https://leader-id.ru/events/208159"
             ),
             EventResponse(
-                "f014b0c3cd604b5bb5c0d9611011054d",
-                "10th Edition of International Conference on World Pharmaceutical Sciences & Drug Delivery",
-                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug D...",
+                "2131c9092eb04b2c8259b23961c06043",
+                "Al-Bassel Exhibition: Syria, Damascus 28 Aug to 2 Sep 2021",
+                "Al-Bassel Exhibition for Creativity and Invention is held in conjunction with the...",
                 "выставка",
-                1629936000000,
-                1630022400000,
-                "Join us at World Pharma 2021 congress and gain knowledge in the areas of Pharmaceutical Science and Drug Delivery. This Conference offers a wide range of critically important scientific sessions from basic research to latest advances in the area of Pharmaceutical Science.\n" +
+                1627776000000,
+                null,
+                "Al-Bassel Exhibition 2021\n" +
+                    "Al-Bassel Exhibition for Creativity and Invention is held in conjunction with the sixty-second session of the Damascus International Fair from 28 August to 2 September 2021.\n" +
                     "\n" +
-                    "Benefits:  1. Keynote certificate / speaker Certificate\n" +
-                    "\n" +
-                    "2. CPD certificate / CME certificate\n" +
-                    "\n" +
-                    "3. Best speaker / best young researcher award\n" +
-                    "\n" +
-                    "4. Journal Publication with ISSN number\n" +
-                    "\n" +
-                    "5. Separate Biography and research page in website.\n" +
-                    "\n" +
-                    "6. Conference Kit\n" +
-                    "\n" +
-                    "7. Lunch and breakfast.",
-                "London, UK",
+                    "Exhibition Aims\n" +
+                    "Al-Bassel Exhibition for Creativity and Invention, a true embodiment of the directives of the immortal leader Hafiz Al-Assad and an expression of the hopes of the nation’s martyr, Basil Hafez Al-Assad.\n" +
+                    "Embodiment of the slogan of self-reliance as a national position.\n" +
+                    "Encouraging creative people, inventors and innovators to continue their scientific trends and develop their creativity.\n" +
+                    "Maximum utilization of these inventions and putting them into practice in order to develop the base building.\n" +
+                    "Capital investment and benefiting from it in following up the national innovation process.\n" +
+                    "Providing a suitable general environment for the individual and public initiative and securing its material and human requirements.\n" +
+                    "Taking care of creators and inventors and protecting their inventions, making them public and developing them.\n" +
+                    "Getting acquainted with inventors locally and in the Arab world, benefiting from each other’s experiences, and strengthening relationships within the framework of creativity and invention with brotherly and friendly countries.\n" +
+                    "The exhibition is a mirror of the achievements of the people of the nation on a creative vision and the heritage and civilization of our nation.\n",
+                "Opposite Ibn Al-Nafees Hospital, Damascus, Syria  /online",
                 "admin@mail.ru",
-                "https://www.innoget.com/innovation-events/1765/10th-edition-of-international-conference-on-world-pharmaceutical-sciences-drug-delivery"
+                "https://leader-id.ru/events/208159"
             )
         )
     }

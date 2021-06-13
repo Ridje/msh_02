@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:visibility="visible"
-        app:itemBackground="@drawable/bottom_nav_state_background_color"
-        app:itemIconTint="@color/default_tint"
+
+        app:itemRippleColor="@color/black"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

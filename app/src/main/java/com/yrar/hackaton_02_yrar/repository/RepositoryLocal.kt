@@ -1,7 +1,6 @@
 package com.yrar.hackaton_02_yrar.repository
 
-import com.yrar.hackaton_02_yrar.model.database.EventEntity
-import com.yrar.hackaton_02_yrar.model.database.UserEventEntity
+import com.yrar.hackaton_02_yrar.model.database.*
 
 interface RepositoryLocal {
 
@@ -15,4 +14,12 @@ interface RepositoryLocal {
    fun getMyActualEvents(currentUser: Int): List<EventEntity>
    fun getMyArchivedEvents(currentUser: Int): List<EventEntity>
    fun getMyAllEvents(currentUser: Int): List<UserEventEntity>
+
+   fun isEmptyProfile(currentUser: Int): Boolean
+
+   fun getUserRoles(currentUser: Int): Map<RoleEntity, Boolean>
+   fun getUserInterests(currentUser: Int): Map<InterestEntity, Boolean>
+
+   fun insertUserInterests(userInterests: List<UserInterestEntity>)
+   fun insertUserRoles(userRoles: List<UserRoleEntity>)
 }
