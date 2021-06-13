@@ -45,6 +45,7 @@ class EventsViewModel @Inject constructor(val repositoryNetwork: RepositoryNetwo
 
             } catch (exception: Throwable) {
                 liveDataToObserve.postValue(EventsState.Error(exception))
+                exception.printStackTrace()
                 return@launch
             }
 

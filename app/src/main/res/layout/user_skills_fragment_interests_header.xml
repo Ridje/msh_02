@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Какие отрасли вам интересны?"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6">
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите от 1 до 7 вариантов"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="42dp"
+        android:layout_gravity="center" />
+</LinearLayout>

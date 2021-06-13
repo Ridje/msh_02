@@ -12,6 +12,7 @@ import com.yrar.hackaton_02_yrar.R
 import com.yrar.hackaton_02_yrar.databinding.EventsFragmentBinding
 import com.yrar.hackaton_02_yrar.model.app.Event
 import com.yrar.hackaton_02_yrar.ui.event.EventFragment
+import com.yrar.hackaton_02_yrar.ui.user_skills.UserInterestsFragment
 import com.yrar.hackaton_02_yrar.utils.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,6 +37,9 @@ class EventsFragment : Fragment() {
         (requireActivity() as MainActivity).setBottomNavigationMenuVisibility(true)
         viewModel.getLiveData().observe(viewLifecycleOwner, { render(it) })
         viewModel.getActualEvents()
+        binding.openUserSkills.setOnClickListener {
+            (requireActivity() as MainActivity).navigateToFragment(UserInterestsFragment(), true)
+        }
     }
 
     private fun render(state: EventsState) {
@@ -64,11 +68,6 @@ class EventsFragment : Fragment() {
                         event
                     )
                 }
-//                binding.eventsList.addItemDecoration(
-//                    EventsRecyclerViewAdapter.SimpleDividerItemDecorationLastExcluded(
-//                        binding.eventsList.resources.getDimension(R.dimen.events_margin)
-//                    )
-//                )
                 binding.eventsList.visibility = View.VISIBLE
                 binding.progressBar.visibility = View.GONE
             }
